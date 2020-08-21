@@ -4,9 +4,9 @@ class GameController {
   }
 
   draw() {
-    window.gameContext.fillStyle = "orange";
-    window.gameContext.font = "48px serif";
-    window.gameContext.fillText("Hello WORLD", 50, 50);
+    window.ctx.fillStyle = "orange";
+    window.ctx.font = "48px serif";
+    window.ctx.fillText("Hello WORLD", 50, 50);
   }
 
   update() {}
