@@ -4,28 +4,19 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.20"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
-    "babel-loader": "^8.0.5",
-    "eslint": "^5.16.0",
-    "jasmine": "^2.5.3",
-    "jasmine-core": "^2.5.2",
-    "karma": "^1.5.0",
-    "karma-jasmine": "^1.1.0",
-    "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "^2.0.3",
-    "sinon": "^7.3.1",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.0"
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "prettier": "2.0.5",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   },
   "scripts": {
     "dev": "webpack -d --watch",
     "prod": "webpack -p",
-    "test-start": "karma start",
-    "test": "karma run",
-    "lint": "find app/ spec/ -name '*.js' | xargs ./node_modules/.bin/eslint --quiet"
+    "prettier": "prettier --write app/*.js app/**/.js"
   }
 }
