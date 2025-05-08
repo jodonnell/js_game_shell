@@ -12,7 +12,6 @@ let base = '.'
 if (import.meta.env.DEV)
   base = '../..'
 
-
 const load = async () => {
   return Promise.all([
     Assets.load(`${base}/assets/fonts/OpenSans-Medium.ttf`),
@@ -36,7 +35,7 @@ const drawText = async (app) => {
 
 const sprites = async () => {
   const texture = Texture.from(
-    "../../assets/spritesheets/pieces-spritesheet.png",
+    `${base}/assets/spritesheets/pieces-spritesheet.png`,
   )
   const spritesheet = new Spritesheet(texture, atlasData)
   await spritesheet.parse()
