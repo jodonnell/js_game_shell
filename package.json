@@ -9,7 +9,8 @@
     "lint": "eslint src/**/*.js test/**/*.js",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "scripts/deploy.sh"
   },
   "type": "module",
   "author": "Jacob",
