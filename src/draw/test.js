@@ -6,12 +6,17 @@ import {
   Texture,
   Sprite,
 } from "pixi.js"
-import atlasData from "../../assets/spritesheets/pieces-spritesheet.json"
+import atlasData from "@/assets/spritesheets/pieces-spritesheet.json"
+
+let base = '.'
+if (import.meta.env.DEV)
+  base = '../..'
+
 
 const load = async () => {
   return Promise.all([
-    Assets.load("../../assets/fonts/OpenSans-Medium.ttf"),
-    Assets.load("../../assets/spritesheets/pieces-spritesheet.png"),
+    Assets.load(`${base}/assets/fonts/OpenSans-Medium.ttf`),
+    Assets.load(`${base}/assets/spritesheets/pieces-spritesheet.png`),
   ])
 }
 
