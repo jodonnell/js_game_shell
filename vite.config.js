@@ -1,16 +1,16 @@
-import { defineConfig } from 'vite'
-import { fileURLToPath, URL } from 'node:url'
+import { defineConfig } from "vite"
+import { fileURLToPath, URL } from "node:url"
 
 export default defineConfig({
-  base: './',
+  base: "./",
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('.', import.meta.url)),
+      "@": fileURLToPath(new URL(".", import.meta.url)),
     },
   },
   test: {
-    include: ['test/**/*.js'],
-    environment: 'node',
+    include: ["test/**/*.js"],
+    environment: "node",
     globals: true,
   },
 })
