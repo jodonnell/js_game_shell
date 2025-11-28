@@ -6,19 +6,20 @@ import {
   Texture,
   Sprite,
 } from "pixi.js"
+import type { SpritesheetData } from "pixi.js"
 import atlasData from "@/assets/spritesheets/pieces-spritesheet.json"
 
-let base = "."
-if (import.meta.env.DEV) base = "../.."
+const base = import.meta.env.DEV ? "../.." : "."
+const spritesheetData = atlasData as SpritesheetData
 
-const load = async () => {
+const load = () => {
   return Promise.all([
     Assets.load(`${base}/assets/fonts/OpenSans-Medium.ttf`),
     Assets.load(`${base}/assets/spritesheets/pieces-spritesheet.png`),
   ])
 }
 
-const drawText = async (app) => {
+const drawText = (app: Application) => {
   const text = new Text({
     text: "2:20",
     style: {
@@ -32,16 +33,16 @@ const drawText = async (app) => {
   app.stage.addChild(text)
 }
 
-const sprites = async () => {
+const sprites = async (): Promise<Spritesheet> => {
   const texture = Texture.from(
     `${base}/assets/spritesheets/pieces-spritesheet.png`,
   )
-  const spritesheet = new Spritesheet(texture, atlasData)
+  const spritesheet = new Spritesheet(texture, spritesheetData)
   await spritesheet.parse()
   return spritesheet
 }
 
-export const test = async () => {
+export const test = async (): Promise<void> => {
   const app = new Application()
   await app.init({ background: "#000000", resizeTo: window })
   document.body.appendChild(app.canvas)

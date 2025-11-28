@@ -1,18 +1,23 @@
 import js from "@eslint/js"
+import tseslint from "typescript-eslint"
 
-export default [
+export default tseslint.config(
+  {
+    ignores: ["dist", "node_modules"],
+  },
   js.configs.recommended,
+  ...tseslint.configs.recommended,
   {
     languageOptions: {
-      ecmaVersion: 2022,
+      ecmaVersion: "latest",
       sourceType: "module",
       globals: {
+        window: true,
+        document: true,
         describe: true,
         it: true,
         expect: true,
-        window: true,
-        document: true,
       },
     },
   },
-]
+)
